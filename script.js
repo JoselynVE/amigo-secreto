@@ -1,65 +1,47 @@
-// elementos del DOM
-const nameInput = document.getElementById("nameInput");
-const addBtn = document.getElementById("addBtn");
-const participantsBox = document.getElementById("participantsBox");
-const sortBtn = document.getElementById("sortBtn");
-const winnerBox = document.getElementById("winnerBox");
+// Array para los nombres
+let amigos = [];
+// Función para agregar un amigo
+function agregarAmigo() {
+    const input = document.getElementById("amigo");
+    const nombre = input.value.trim();
 
-// Lista - participantes
-let participants = [];
+    if (nombre === "") {
+        alert("Por favor, ingresa un nombre válido.");
+        return;
+    }
 
-// Agregar participante
-addBtn.addEventListener("click", () => {
-  const name = nameInput.value.trim();
-  if (name === "") {
-    alert("Por favor, ingresa un nombre.");
-    return;
-  }
+    // evitar duplicados
+    if (amigos.includes(nombre)) {
+        alert("Ese nombre ya está en la lista.");
+        return;
+    }
 
-  // Evitar duplicados
-  if (participants.some(p => p.toLowerCase() === name.toLowerCase())) {
-    alert("Ese nombre ya está en la lista.");
-    return;
-  }
-
-  participants.push(name);
-  updateParticipantsList();
-  nameInput.value = "";
-  nameInput.focus();
-});
-
-// Actualiza lista de participantes
-function updateParticipantsList() {
-  participantsBox.innerHTML = "";
-  participants.forEach((participant, index) => {
-    const div = document.createElement("div");
-    div.textContent = participant;
-
-    // Botón - eliminar participante
-    const removeBtn = document.createElement("button");
-    removeBtn.textContent = "eliminar";
-    removeBtn.style.marginLeft = "10px";
-    removeBtn.style.marginTop = "10px";
-    removeBtn.addEventListener("click", () => {
-      participants.splice(index, 1);
-      updateParticipantsList();
-    });
-
-    div.appendChild(removeBtn);
-    participantsBox.appendChild(div);
-  });
+    amigos.push(nombre);
+    input.value = "";
+    mostrarLista();
 }
 
-// Sorteo
-sortBtn.addEventListener("click", () => {
-  if (participants.length === 0) {
-    alert("No hay participantes para sortear.");
-    return;
-  }
+// Función para mostrar la lista
+function mostrarLista() {
+    const lista = document.getElementById("listaAmigos");
+    lista.innerHTML = "";
+    amigos.forEach((amigo, index) => {
+        const li = document.createElement("li");
+        li.textContent = amigo;
+        lista.appendChild(li);
+    });
+}
 
-  const randomIndex = Math.floor(Math.random() * participants.length);
-  const winner = participants[randomIndex];
+// Función para sortear un amigo
+function sortearAmigo() {
+    if (amigos.length < 2) {
+        alert("Debe haber al menos 2 amigos para hacer el sorteo.");
+        return;
+    }
 
-  // Mostrar el ganador 
-  winnerBox.textContent = `Tu amigo secreto es: ${winner}`;
-});
+    const indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    const amigoSorteado = amigos[indiceAleatorio];
+
+    const resultado = document.getElementById("resultado");
+    resultado.innerHTML = `<li>Tu amigo secreto es: <strong>${amigoSorteado}</strong></li>`;
+}

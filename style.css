@@ -1,96 +1,162 @@
-.wrap {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+:root {
+    --color-primary: #4B69FD;
+    --color-secondary: #FFF9EB;
+    --color-tertiary: #C4C4C4;
+    --color-button: #fe652b;
+    --color-button-hover: #e55720;
+    --color-text: #444444;
+    --color-white: #FFFFFF;
 }
 
-.add, .sort {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.add:hover, .sort:hover {
-  background-color: #45a049;
+body {
+    height: 100vh;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.sort {
-  height: 40px;
-  margin-top: 40px;
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
 }
 
-/* Caja de participantes */
-.box {
-  border: 2px solid #ddd;
-  background-color: #f9f9f9;
-  width: 20pc;
-  min-height: 60px;
-  margin-top: 20px;
-  padding: 10px;
-  border-radius: 6px;
-  box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+/* Banner */
+.header-banner {
+    flex: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0 0;
 }
 
-/* Contenedor de bloques */
-.contenedor_campos {
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
-  align-items: flex-start;
-  margin-top: 20px;
+/* Sección de entrada */
+.input-section {
+    flex: 60%;
+    background-color: var(--color-secondary);
+    border: 1px solid #000;
+    border-radius: 64px 64px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
 }
 
-/* Caja de ganador */
-.winner-box {
-  border: 2px solid #ddd;
-  background-color: #fff8dc;
-  width: 20pc;
-  min-height: 60px;
-  margin-top: 20px;
-  padding-top: 50px;
-  border-radius: 6px;
-  font-weight: bold;
-  text-align: center;
-  color: #333;
+/* Títulos */
+.main-title {
+    font-size: 48px;
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--color-white);
 }
 
-.input-inline {
-  margin-top: 10px;
-  display: flex;
-  gap: 10px;
+.section-title {
+    font-family: "Inter", serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 10px 0;
+    text-align: center;
 }
 
-#nameInput {
-  padding: 6px 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+/* Contenedores de entrada y botón */
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
 }
 
-/* Botón eliminar */
+.input-name {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 25px 0 0 25px;
+    font-size: 16px;
+}
+
+.button-container {
+    width: 300px;
+    justify-content: center;
+}
+
+/* Estilos de entrada de texto */
+.input-title {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #333;
+    border-right: none;
+    border-radius: 25px 0 0 25px;
+    font-family: "Merriweather", serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos de botón */
 button {
-  font-size: 12px;
+    padding: 15px 30px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    border: 2px solid #000;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 
-.box div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4px 0;
-  border-bottom: 1px solid #eee;
+.button-add {
+    background-color: var(--color-tertiary);
+    color: var(--color-text);
+    border-radius: 0 25px 25px 0;
 }
 
-.box div:last-child {
-  border-bottom: none;
+.button-add:hover {
+    background-color: #a1a1a1;
 }
 
-button {
-  background: none;
-  border: none;
-  color: red;
-  cursor: pointer;
+/* Listas */
+ul {
+    list-style-type: none;
+    color: var(--color-text);
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.result-list {
+    margin-top: 15px;
+    color: #05DF05;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Botón de sortear título */
+.button-draw {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 40px;
+    color: var(--color-white);
+    background-color: var(--color-button);
+    font-size: 16px;
+}
+
+.button-draw img {
+    margin-right: 40px;
+}
+
+.button-draw:hover {
+    background-color: var(--color-button-hover);
 }
