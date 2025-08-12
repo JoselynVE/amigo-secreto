@@ -1,0 +1,96 @@
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.add, .sort {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add:hover, .sort:hover {
+  background-color: #45a049;
+}
+
+.sort {
+  height: 40px;
+  margin-top: 40px;
+}
+
+/* Caja de participantes */
+.box {
+  border: 2px solid #ddd;
+  background-color: #f9f9f9;
+  width: 20pc;
+  min-height: 60px;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+}
+
+/* Contenedor de bloques */
+.contenedor_campos {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+/* Caja de ganador */
+.winner-box {
+  border: 2px solid #ddd;
+  background-color: #fff8dc;
+  width: 20pc;
+  min-height: 60px;
+  margin-top: 20px;
+  padding-top: 50px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+}
+
+.input-inline {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+#nameInput {
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Botón eliminar */
+button {
+  font-size: 12px;
+}
+
+.box div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.box div:last-child {
+  border-bottom: none;
+}
+
+button {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
