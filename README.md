@@ -10,11 +10,7 @@ Permite agregar participantes, eliminar nombres duplicados y seleccionar aleator
 - 🎯 Sortear de forma aleatoria al ganador.
 
 ## Estructura del proyecto
-📦 amigo-secreto
-├── index.html # Estructura principal
-├── style.css # Estilos de la aplicación
-├── script.js # Lógica del sorteo
-└── README.md # Documentación del proyecto
+<pre> ```txt 📦 amigo-secreto ├── index.html # Estructura principal ├── style.css # Estilos de la aplicación ├── script.js # Lógica del sorteo └── README.md # Documentación del proyecto ``` </pre>
 
 ## Instalación y uso
 
