@@ -9,9 +9,6 @@ Permite agregar participantes, eliminar nombres duplicados y seleccionar aleator
 - 🗑 Eliminar participantes individualmente.
 - 🎯 Sortear de forma aleatoria al ganador.
 
-## Estructura del proyecto
-<pre> ```txt 📦 amigo-secreto ├── index.html # Estructura principal ├── style.css # Estilos de la aplicación ├── script.js # Lógica del sorteo └── README.md # Documentación del proyecto ``` </pre>
-
 ## Instalación y uso
 
 1. **Clonar el repositorio**
